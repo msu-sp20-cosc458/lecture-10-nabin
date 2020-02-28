@@ -1,6 +1,20 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import GoogleLogin from 'react-google-login';
 
-import { Content } from './Content';
-
-ReactDOM.render(<Content />, document.getElementById('content'));
+ 
+ 
+const responseGoogle = (response) => {
+  console.log(response);
+}
+ 
+ReactDOM.render(
+  <GoogleLogin
+    clientId=""
+    buttonText="Login"
+    onSuccess={responseGoogle}
+    onFailure={responseGoogle}
+    cookiePolicy={'single_host_origin'}
+  />,
+  document.getElementById('content')
+);
